@@ -1,0 +1,12 @@
+﻿@model Ans_1.Models.Course
+
+<div class="form-group row mb-2">
+    <div class="col-8">
+        @Html.DropDownList("courseId", ViewBag.courses as SelectList, "----Select Course----", htmlAttributes: new { @class = "form-control shadow-sm" })
+    </div>
+    <div class="col-4">
+        <a href="#" id="btnDeleteCourse" class="btn btn-outline-danger btn-sm">
+            <i class="fas fa-trash me-1"></i>Remove
+        </a>
+    </div>
+</div>

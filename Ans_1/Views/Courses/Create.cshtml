@@ -1,0 +1,325 @@
+﻿@model Ans_1.Models.Course
+@{
+    ViewBag.Title = "Create Course";
+}
+
+@section styles {
+    <style>
+        .create-header {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(16, 185, 129, 0.1));
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .create-header::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background: linear-gradient(90deg, #2563eb, #10b981);
+            }
+
+        .create-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2563eb, #10b981);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .create-subtitle {
+            color: #64748b;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .form-container {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 3rem;
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            border: 1px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .form-container::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background: linear-gradient(90deg, #2563eb, #10b981, #06b6d4);
+            }
+
+        .form-group-enhanced {
+            margin-bottom: 2rem;
+        }
+
+        .form-label-enhanced {
+            display: block;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+            .form-label-enhanced i {
+                color: #2563eb;
+                font-size: 1.2rem;
+            }
+
+        .form-control-enhanced {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f8fafc;
+        }
+
+            .form-control-enhanced:focus {
+                outline: none;
+                border-color: #2563eb;
+                box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+                background: white;
+                transform: translateY(-1px);
+            }
+
+            .form-control-enhanced:hover {
+                border-color: #94a3b8;
+                background: white;
+            }
+
+        .validation-message {
+            color: #ef4444;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+            .validation-message::before {
+                content: '⚠';
+                font-size: 1rem;
+            }
+
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .btn-primary-enhanced {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            border: none;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+            .btn-primary-enhanced:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+                background: linear-gradient(135deg, #1d4ed8, #1e40af);
+            }
+
+            .btn-primary-enhanced:active {
+                transform: translateY(0);
+            }
+
+        .btn-secondary-enhanced {
+            background: white;
+            border: 2px solid #e2e8f0;
+            color: #64748b;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+            .btn-secondary-enhanced:hover {
+                background: #f8fafc;
+                border-color: #cbd5e1;
+                color: #475569;
+                text-decoration: none;
+                transform: translateY(-1px);
+            }
+
+        .form-tips {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(16, 185, 129, 0.1));
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border-left: 4px solid #06b6d4;
+        }
+
+            .form-tips h4 {
+                color: #0891b2;
+                margin-bottom: 1rem;
+                font-size: 1.1rem;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .form-tips ul {
+                margin: 0;
+                padding-left: 1.5rem;
+                color: #475569;
+            }
+
+            .form-tips li {
+                margin-bottom: 0.5rem;
+            }
+
+        @@media (max-width: 768px) {
+            .create-title {
+                font-size: 2rem;
+            }
+
+            .form-container {
+                padding: 2rem 1.5rem;
+            }
+
+            .form-actions {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .btn-primary-enhanced,
+            .btn-secondary-enhanced {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+}
+
+<div class="create-header">
+    <h1 class="create-title">
+        <i class="fas fa-plus-circle" style="margin-right: 0.5rem; color: #10b981;"></i>
+        Create New Course
+    </h1>
+    <p class="create-subtitle">Add a new course to your academic catalog</p>
+</div>
+
+<div class="form-container">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group-enhanced">
+            <label class="form-label-enhanced">
+                <i class="fas fa-book"></i>
+                Course Name *
+            </label>
+            @Html.EditorFor(x => x.CourseName, new { htmlAttributes = new { @class = "form-control-enhanced", @placeholder = "Enter course name (e.g., Introduction to Computer Science)" } })
+            @Html.ValidationMessageFor(x => x.CourseName, "", new { @class = "validation-message" })
+        </div>
+
+        <div class="form-actions">
+            <a href="@Url.Action("Index")" class="btn-secondary-enhanced">
+                <i class="fas fa-arrow-left"></i>
+                Back to List
+            </a>
+            <button type="submit" class="btn-primary-enhanced">
+                <i class="fas fa-save"></i>
+                Create Course
+            </button>
+        </div>
+    }
+
+    <div class="form-tips">
+        <h4>
+            <i class="fas fa-lightbulb"></i>
+            Tips for Creating Courses
+        </h4>
+        <ul>
+            <li>Use clear, descriptive names for your courses</li>
+            <li>Consider including the academic level (e.g., "Advanced", "Introduction")</li>
+            <li>Make sure the course name is unique and easily identifiable</li>
+            <li>Avoid using special characters or excessive abbreviations</li>
+        </ul>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function() {
+            // Form validation enhancement
+            $('form').on('submit', function(e) {
+                var courseName = $('#CourseName').val().trim();
+
+                if (courseName === '') {
+                    e.preventDefault();
+                    $('#CourseName').focus();
+                    return false;
+                }
+
+                // Add loading state to submit button
+                var submitBtn = $('.btn-primary-enhanced');
+                submitBtn.prop('disabled', true);
+                submitBtn.html('<span class="loading"></span> Creating Course...');
+            });
+
+            // Real-time validation feedback
+            $('#CourseName').on('input', function() {
+                var value = $(this).val().trim();
+                var validationMsg = $(this).siblings('.validation-message');
+
+                if (value.length > 0) {
+                    $(this).css('border-color', '#10b981');
+                    validationMsg.hide();
+                } else {
+                    $(this).css('border-color', '#ef4444');
+                }
+            });
+
+            // Character counter
+            $('#CourseName').after('<div class="char-counter" style="font-size: 0.875rem; color: #64748b; margin-top: 0.25rem;"></div>');
+
+            $('#CourseName').on('input', function() {
+                var length = $(this).val().length;
+                $('.char-counter').text(length + ' characters');
+
+                if (length > 50) {
+                    $('.char-counter').css('color', '#f59e0b');
+                } else {
+                    $('.char-counter').css('color', '#64748b');
+                }
+            });
+        });
+    </script>
+}

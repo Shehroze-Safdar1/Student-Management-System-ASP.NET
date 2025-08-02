@@ -1,0 +1,207 @@
+﻿@model IEnumerable<Ans_1.Models.Enroll>
+@{
+    ViewBag.Title = "Enrollment Report";
+}
+
+<div class="container-fluid">
+    <!-- Header -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h2 class="text-primary fw-bold">
+                        <i class="fas fa-clipboard-list me-2"></i>
+                        Enrollment Activity Report
+                    </h2>
+                    <p class="text-muted">Complete record of all student course enrollments</p>
+                </div>
+                <div>
+                    <a href="@Url.Action("Index")" class="btn btn-outline-secondary">
+                        <i class="fas fa-arrow-left me-1"></i>Dashboard
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enrollment Statistics -->
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card bg-primary text-white">
+                <div class="card-body text-center">
+                    <h4>@Model.Count()</h4>
+                    <p class="mb-0">Total Enrollments</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-success text-white">
+                <div class="card-body text-center">
+                    <h4>@Model.Count(e => !e.Student.StudentStatus)</h4>
+                    <p class="mb-0">Active Enrollments</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-warning text-white">
+                <div class="card-body text-center">
+                    <h4>@Model.Count(e => e.Student.StudentStatus)</h4>
+                    <p class="mb-0">Withdrawn Enrollments</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-info text-white">
+                <div class="card-body text-center">
+                    <h4>@Model.Select(e => e.StudentId).Distinct().Count()</h4>
+                    <p class="mb-0">Unique Students</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enrollments Table -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">
+                        <i class="fas fa-table me-2"></i>
+                        Detailed Enrollment Records
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-striped" id="enrollmentTable">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Enrollment ID</th>
+                                    <th>Student Info</th>
+                                    <th>Course</th>
+                                    <th>Student Status</th>
+                                    <th>Age Group</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var enrollment in Model)
+                                {
+                                    <tr>
+                                        <td class="fw-bold">#@enrollment.EnrollId</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                @if (!string.IsNullOrEmpty(enrollment.Student.Picture))
+                                                {
+                                                    <img src="@enrollment.Student.Picture" alt="Student Photo"
+                                                         class="rounded-circle me-2" style="width: 35px; height: 35px; object-fit: cover;">
+                                                }
+                                                else
+                                                {
+                                                    <div class="rounded-circle bg-secondary d-flex align-items-center justify-content-center me-2"
+                                                         style="width: 35px; height: 35px;">
+                                                        <i class="fas fa-user text-white small"></i>
+                                                    </div>
+                                                }
+                                                <div>
+                                                    <div class="fw-semibold">@enrollment.Student.StudentName</div>
+                                                    <small class="text-muted">ID: @enrollment.StudentId | Age: @enrollment.Student.Age</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="badge bg-info fs-6">@enrollment.Course.CourseName</span>
+                                            <br><small class="text-muted">Course ID: @enrollment.CourseId</small>
+                                        </td>
+                                        <td>
+                                            @if (enrollment.Student.StudentStatus)
+                                            {
+                                                <span class="badge bg-warning">
+                                                    <i class="fas fa-user-times me-1"></i>Withdrawn
+                                                </span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge bg-success">
+                                                    <i class="fas fa-user-check me-1"></i>Active
+                                                </span>
+                                            }
+                                        </td>
+                                        <td>
+                                            @{
+                                                var ageGroup = enrollment.Student.Age < 20 ? "Under 20" :
+                                                              enrollment.Student.Age < 25 ? "20-24" :
+                                                              enrollment.Student.Age < 30 ? "25-29" :
+                                                              enrollment.Student.Age < 35 ? "30-34" : "35+";
+                                            }
+                                            <span class="badge bg-secondary">@ageGroup</span>
+                                        </td>
+                                        <td>
+                                            <div class="btn-group btn-group-sm">
+                                                <a href="@Url.Action("Edit", "Students", new { id = enrollment.StudentId })"
+                                                   class="btn btn-outline-primary btn-sm" title="Edit Student">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                                <button class="btn btn-outline-info btn-sm"
+                                                        onclick="showEnrollmentDetails(@enrollment.EnrollId)" title="View Details">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Enrollment Details Modal -->
+<div class="modal fade" id="enrollmentDetailsModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Enrollment Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="enrollmentDetailsBody">
+                <!-- Enrollment details will be loaded here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- DataTables CDN -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('#enrollmentTable').DataTable({
+        "pageLength": 15,
+        "order": [[ 0, "desc" ]],
+        "responsive": true,
+        "language": {
+            "search": "Search enrollments:",
+            "lengthMenu": "Show _MENU_ enrollments per page",
+            "info": "Showing _START_ to _END_ of _TOTAL_ enrollments"
+        }
+    });
+});
+
+function showEnrollmentDetails(enrollmentId) {
+    $('#enrollmentDetailsBody').html(`
+        <h6>Enrollment ID: ${enrollmentId}</h6>
+        <p>This is where you can show detailed enrollment information.</p>
+        <p>You can add more details like enrollment date, performance metrics, etc.</p>
+    `);
+    $('#enrollmentDetailsModal').modal('show');
+}
+</script>

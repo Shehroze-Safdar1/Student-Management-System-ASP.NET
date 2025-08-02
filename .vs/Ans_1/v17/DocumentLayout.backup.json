@@ -1,0 +1,150 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Visual Programming\\Student-Management-System-ASP.NET-MVC-master\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C758195C-68F2-40D6-9739-DA7AB6631726}|Ans_1\\Ans_1.csproj|d:\\visual programming\\student-management-system-asp.net-mvc-master\\ans_1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C758195C-68F2-40D6-9739-DA7AB6631726}|Ans_1\\Ans_1.csproj|solutionrelative:ans_1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C758195C-68F2-40D6-9739-DA7AB6631726}|Ans_1\\Ans_1.csproj|D:\\Visual Programming\\Student-Management-System-ASP.NET-MVC-master\\ans_1\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{C758195C-68F2-40D6-9739-DA7AB6631726}|Ans_1\\Ans_1.csproj|solutionrelative:ans_1\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C758195C-68F2-40D6-9739-DA7AB6631726}|Ans_1\\Ans_1.csproj|D:\\Visual Programming\\Student-Management-System-ASP.NET-MVC-master\\ans_1\\models\\viewmodels\\studentvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C758195C-68F2-40D6-9739-DA7AB6631726}|Ans_1\\Ans_1.csproj|solutionrelative:ans_1\\models\\viewmodels\\studentvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C758195C-68F2-40D6-9739-DA7AB6631726}|Ans_1\\Ans_1.csproj|D:\\Visual Programming\\Student-Management-System-ASP.NET-MVC-master\\ans_1\\models\\dbmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C758195C-68F2-40D6-9739-DA7AB6631726}|Ans_1\\Ans_1.csproj|solutionrelative:ans_1\\models\\dbmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C758195C-68F2-40D6-9739-DA7AB6631726}|Ans_1\\Ans_1.csproj|D:\\Visual Programming\\Student-Management-System-ASP.NET-MVC-master\\ans_1\\models\\viewmodels\\statisticsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C758195C-68F2-40D6-9739-DA7AB6631726}|Ans_1\\Ans_1.csproj|solutionrelative:ans_1\\models\\viewmodels\\statisticsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C758195C-68F2-40D6-9739-DA7AB6631726}|Ans_1\\Ans_1.csproj|D:\\Visual Programming\\Student-Management-System-ASP.NET-MVC-master\\ans_1\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C758195C-68F2-40D6-9739-DA7AB6631726}|Ans_1\\Ans_1.csproj|solutionrelative:ans_1\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C758195C-68F2-40D6-9739-DA7AB6631726}|Ans_1\\Ans_1.csproj|D:\\Visual Programming\\Student-Management-System-ASP.NET-MVC-master\\ans_1\\controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C758195C-68F2-40D6-9739-DA7AB6631726}|Ans_1\\Ans_1.csproj|solutionrelative:ans_1\\controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C758195C-68F2-40D6-9739-DA7AB6631726}|Ans_1\\Ans_1.csproj|D:\\Visual Programming\\Student-Management-System-ASP.NET-MVC-master\\ans_1\\views\\statistics\\coursereport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C758195C-68F2-40D6-9739-DA7AB6631726}|Ans_1\\Ans_1.csproj|solutionrelative:ans_1\\views\\statistics\\coursereport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Visual Programming\\Student-Management-System-ASP.NET-MVC-master\\Ans_1\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Ans_1\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Visual Programming\\Student-Management-System-ASP.NET-MVC-master\\Ans_1\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Ans_1\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAADIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-17T07:54:49.186Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\Visual Programming\\Student-Management-System-ASP.NET-MVC-master\\Ans_1\\Web.config",
+              "RelativeDocumentMoniker": "Ans_1\\Web.config",
+              "ToolTip": "D:\\Visual Programming\\Student-Management-System-ASP.NET-MVC-master\\Ans_1\\Web.config",
+              "RelativeToolTip": "Ans_1\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-06-17T06:49:46.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DbModels.cs",
+              "DocumentMoniker": "D:\\Visual Programming\\Student-Management-System-ASP.NET-MVC-master\\Ans_1\\Models\\DbModels.cs",
+              "RelativeDocumentMoniker": "Ans_1\\Models\\DbModels.cs",
+              "ToolTip": "D:\\Visual Programming\\Student-Management-System-ASP.NET-MVC-master\\Ans_1\\Models\\DbModels.cs",
+              "RelativeToolTip": "Ans_1\\Models\\DbModels.cs",
+              "ViewState": "AgIAABAAAAAA/P////8fwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T06:47:13.172Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StudentVM.cs",
+              "DocumentMoniker": "D:\\Visual Programming\\Student-Management-System-ASP.NET-MVC-master\\Ans_1\\Models\\ViewModels\\StudentVM.cs",
+              "RelativeDocumentMoniker": "Ans_1\\Models\\ViewModels\\StudentVM.cs",
+              "ToolTip": "D:\\Visual Programming\\Student-Management-System-ASP.NET-MVC-master\\Ans_1\\Models\\ViewModels\\StudentVM.cs",
+              "RelativeToolTip": "Ans_1\\Models\\ViewModels\\StudentVM.cs",
+              "ViewState": "AgIAAAoAAACAZWZmZmYkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T06:47:10.905Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RouteConfig.cs",
+              "DocumentMoniker": "D:\\Visual Programming\\Student-Management-System-ASP.NET-MVC-master\\Ans_1\\App_Start\\RouteConfig.cs",
+              "RelativeDocumentMoniker": "Ans_1\\App_Start\\RouteConfig.cs",
+              "ToolTip": "D:\\Visual Programming\\Student-Management-System-ASP.NET-MVC-master\\Ans_1\\App_Start\\RouteConfig.cs",
+              "RelativeToolTip": "Ans_1\\App_Start\\RouteConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T06:46:17.18Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "StatisticsViewModel.cs",
+              "DocumentMoniker": "D:\\Visual Programming\\Student-Management-System-ASP.NET-MVC-master\\Ans_1\\Models\\ViewModels\\StatisticsViewModel.cs",
+              "RelativeDocumentMoniker": "Ans_1\\Models\\ViewModels\\StatisticsViewModel.cs",
+              "ToolTip": "D:\\Visual Programming\\Student-Management-System-ASP.NET-MVC-master\\Ans_1\\Models\\ViewModels\\StatisticsViewModel.cs",
+              "RelativeToolTip": "Ans_1\\Models\\ViewModels\\StatisticsViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T06:45:27.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "StudentsController.cs",
+              "DocumentMoniker": "D:\\Visual Programming\\Student-Management-System-ASP.NET-MVC-master\\Ans_1\\Controllers\\StudentsController.cs",
+              "RelativeDocumentMoniker": "Ans_1\\Controllers\\StudentsController.cs",
+              "ToolTip": "D:\\Visual Programming\\Student-Management-System-ASP.NET-MVC-master\\Ans_1\\Controllers\\StudentsController.cs",
+              "RelativeToolTip": "Ans_1\\Controllers\\StudentsController.cs",
+              "ViewState": "AgIAABgAAADAZ2ZmZiYnwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T06:44:21.975Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CourseReport.cshtml",
+              "DocumentMoniker": "D:\\Visual Programming\\Student-Management-System-ASP.NET-MVC-master\\Ans_1\\Views\\Statistics\\CourseReport.cshtml",
+              "RelativeDocumentMoniker": "Ans_1\\Views\\Statistics\\CourseReport.cshtml",
+              "ToolTip": "D:\\Visual Programming\\Student-Management-System-ASP.NET-MVC-master\\Ans_1\\Views\\Statistics\\CourseReport.cshtml",
+              "RelativeToolTip": "Ans_1\\Views\\Statistics\\CourseReport.cshtml",
+              "ViewState": "AgIAAGYAAACAmpmZmZkuwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-17T06:43:32.05Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

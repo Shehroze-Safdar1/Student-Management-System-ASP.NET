@@ -1,0 +1,140 @@
+﻿@model Ans_1.Models.ViewModels.StudentVM
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginForm("Create", "Students", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Main Header -->
+            <div class="col-12 mb-4">
+                <div class="text-center">
+                    <h2 class="display-6 text-primary fw-bold">Student Registration Portal</h2>
+                    <p class="lead text-muted">Enter The Student Information</p>
+                    <hr class="w-50 mx-auto">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row mb-2">
+            <!-- Student Information Section -->
+            <div class="col-6">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0">
+                            <i class="fas fa-user-graduate me-2"></i>
+                            Personal Information
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        <div class="form-group row mb-3 mt-3">
+                            @Html.LabelFor(x => x.StudentName, htmlAttributes: new { @class = "control-label col-4 fw-semibold" })
+                            <div class="col-5">
+                                @Html.EditorFor(x => x.StudentName, new { htmlAttributes = new { @class = "form-control shadow-sm" } })
+                                @Html.ValidationMessageFor(x => x.StudentName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-3">
+                            @Html.LabelFor(x => x.BirthDate, htmlAttributes: new { @class = "control-label col-4 fw-semibold" })
+                            <div class="col-5">
+                                @Html.EditorFor(x => x.BirthDate, new { htmlAttributes = new { @class = "form-control shadow-sm", Type = "date" } })
+                                @Html.ValidationMessageFor(x => x.BirthDate, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-3">
+                            @Html.LabelFor(x => x.Age, htmlAttributes: new { @class = "control-label col-4 fw-semibold" })
+                            <div class="col-5">
+                                @Html.EditorFor(x => x.Age, new { htmlAttributes = new { @class = "form-control shadow-sm", type = "text", inputmode = "numeric" } })
+                                @Html.ValidationMessageFor(x => x.Age, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-3">
+                            @Html.LabelFor(x => x.PicturePath, htmlAttributes: new { @class = "control-label col-4 fw-semibold" })
+                            <div class="col-5">
+                                @Html.TextBoxFor(x => x.PicturePath, new { @class = "form-control shadow-sm", Type = "file" })
+                                @Html.ValidationMessageFor(x => x.PicturePath, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-3">
+                            @Html.LabelFor(x => x.StudentStatus, htmlAttributes: new { @class = "control-label col-4 fw-semibold" })
+                            <div class="col-5">
+                                <div class="form-check">
+                                    @Html.EditorFor(x => x.StudentStatus, new { htmlAttributes = new { @class = "form-check-input" } })
+                                    <label class="form-check-label ms-2">Withdrawn</label>
+                                    @Html.ValidationMessageFor(x => x.StudentStatus, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Management Section -->
+            <div class="col-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-warning text-dark">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="mb-0">
+                                <i class="fas fa-exclamation-triangle me-2"></i>
+                                Academic Records
+                            </h4>
+                            <a href="#" id="btnPlus" class="btn btn-outline-dark btn-sm">
+                                <i class="fas fa-plus me-1"></i>Add Course
+                            </a>
+                        </div>
+                        <small class="text-muted">Failed Courses Management</small>
+                    </div>
+                    <div class="card-body">
+                        <div id="CourseContainer">
+                            @Html.Action("AddNewCourse", "Students")
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button Section -->
+            <div class="col-12 mt-4">
+                <div class="text-center">
+                    <input type="submit" value="Register Student" class="btn btn-primary btn-lg px-5 shadow" />
+                    <p class="text-muted mt-2 small">Please review all information before submitting</p>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        // Handle Add Course button click
+        $(document).on('click', '#btnPlus', function (e) {
+            e.preventDefault();
+
+            $.ajax({
+                url: '@Url.Action("AddNewCourse", "Students")',
+                type: 'GET',
+                success: function (data) {
+                    $('#CourseContainer').append(data);
+                },
+                error: function () {
+                    alert('Error loading course selection');
+                }
+            });
+        });
+
+        // Handle Delete Course button click
+        $(document).on('click', '#btnDeleteCourse', function (e) {
+            e.preventDefault();
+            $(this).closest('.form-group').remove();
+        });
+    });
+</script>
